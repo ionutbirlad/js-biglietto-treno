@@ -19,6 +19,7 @@ kmDaPercorrere = prompt("Inserisci i km che intendi percorrere!");
 etaUtente = prompt("Inserisci la tua età!");
 console.log("Devi percorrere " + kmDaPercorrere + " km", "ed hai " + etaUtente + " anni");
 
+
 // STEP 2
 prezzoSenzaSconto = kmDaPercorrere * costoAlKm;
 console.log("Il prezzo base senza sconto ammonta a: " + prezzoSenzaSconto + " euro");
@@ -48,6 +49,3 @@ if ((etaUtente > 18) && (etaUtente < 65)) {//Quelli compresi tra 18 e 65 ani di 
   prezzoScontato = prezzoSenzaSconto - ((prezzoSenzaSconto * scontoAnziani) / 100);
   console.log("Il prezzo che devi pagare è: " + prezzoScontato + " euro");
 }
-
-// Visualizzazione a schermo
-document.getElementById('prezzo').innerHTML = " " + prezzoScontato + " ";

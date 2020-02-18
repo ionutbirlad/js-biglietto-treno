@@ -32,13 +32,15 @@ console.log("Il prezzo base senza sconto ammonta a: " + prezzoSenzaSconto + " eu
 //   prezzoScontato = prezzoSenzaSconto - ((prezzoSenzaSconto * scontoMinorenni) / 100);
 //   console.log("Il prezzo che devi pagare è: " + prezzoScontato + " euro");
 // } else { //Quelli compresi tra 18 e 65 ani di età
-//   console.log("Il prezzo che devi pagare è: " + prezzoSenzaSconto + " euro");
+//   prezzoScontato = prezzoSenzaSconto;
+//   console.log("Il prezzo che devi pagare è: " + prezzoScontato + " euro");
 // }
 
 
 // Seconda alternativa
 if ((etaUtente > 18) && (etaUtente < 65)) {//Quelli compresi tra 18 e 65 ani di età
-  console.log("Il prezzo che devi pagare è: " + prezzoSenzaSconto + " euro");
+  prezzoScontato = prezzoSenzaSconto;
+  console.log("Il prezzo che devi pagare è: " + prezzoScontato + " euro");
 } else if (etaUtente < 18) {//Se siamo sotto i18 anni di età
   prezzoScontato = prezzoSenzaSconto - ((prezzoSenzaSconto * scontoMinorenni) / 100);
   console.log("Il prezzo che devi pagare è: " + prezzoScontato + " euro");
@@ -46,3 +48,6 @@ if ((etaUtente > 18) && (etaUtente < 65)) {//Quelli compresi tra 18 e 65 ani di 
   prezzoScontato = prezzoSenzaSconto - ((prezzoSenzaSconto * scontoAnziani) / 100);
   console.log("Il prezzo che devi pagare è: " + prezzoScontato + " euro");
 }
+
+// Visualizzazione a schermo
+document.getElementById('prezzo').innerHTML = " " + prezzoScontato + " ";

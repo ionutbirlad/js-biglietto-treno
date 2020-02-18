@@ -24,12 +24,25 @@ prezzoSenzaSconto = kmDaPercorrere * costoAlKm;
 console.log("Il prezzo base senza sconto ammonta a: " + prezzoSenzaSconto + " euro");
 
 // STEP 3
-if (etaUtente > 65) { //Se siamo nell'over 65
-  prezzoScontato = prezzoSenzaSconto - ((prezzoSenzaSconto * scontoAnziani) / 100);
-  console.log("Il prezzo che devi pagare è: " + prezzoScontato + " euro");
-} else if (etaUtente < 18) { //Se siamo sotto i18 anni di età
+// Prima alternativa
+// if (etaUtente > 65) { //Se siamo nell'over 65
+//   prezzoScontato = prezzoSenzaSconto - ((prezzoSenzaSconto * scontoAnziani) / 100);
+//   console.log("Il prezzo che devi pagare è: " + prezzoScontato + " euro");
+// } else if (etaUtente < 18) { //Se siamo sotto i18 anni di età
+//   prezzoScontato = prezzoSenzaSconto - ((prezzoSenzaSconto * scontoMinorenni) / 100);
+//   console.log("Il prezzo che devi pagare è: " + prezzoScontato + " euro");
+// } else { //Quelli compresi tra 18 e 65 ani di età
+//   console.log("Il prezzo che devi pagare è: " + prezzoSenzaSconto + " euro");
+// }
+
+
+// Seconda alternativa
+if ((etaUtente > 18) && (etaUtente < 65)) {//Quelli compresi tra 18 e 65 ani di età
+  console.log("Il prezzo che devi pagare è: " + prezzoSenzaSconto + " euro");
+} else if (etaUtente < 18) {//Se siamo sotto i18 anni di età
   prezzoScontato = prezzoSenzaSconto - ((prezzoSenzaSconto * scontoMinorenni) / 100);
   console.log("Il prezzo che devi pagare è: " + prezzoScontato + " euro");
-} else { //Quelli compresi tra 18 e 65 ani di età
-  console.log("Il prezzo che devi pagare è: " + prezzoSenzaSconto + " euro");
+} else {//Se siamo nell'over 65
+  prezzoScontato = prezzoSenzaSconto - ((prezzoSenzaSconto * scontoAnziani) / 100);
+  console.log("Il prezzo che devi pagare è: " + prezzoScontato + " euro");
 }
